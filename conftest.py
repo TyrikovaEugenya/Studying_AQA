@@ -31,6 +31,7 @@ def browser(request):
         ## options = webdriver.ChromeOptions()
         ## options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--headless=new")
         service = Service(ChromeDriverManager().install())
         browser = webdriver.Chrome(service=service, options=chrome_options)
         ## browser = webdriver.Chrome(options=options)

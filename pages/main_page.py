@@ -4,12 +4,14 @@ from selenium.webdriver.common.by import By
 from .locators import MainPageLocators
 
 class MainPage(BasePage):
-    def go_to_login_page(self):
-        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
-        login_link.click()
-        alert = self.browser.switch_to.alert
-        alert.accept()
+    def __init__(self, *args, **kwargs):
+        super(MainPage).__init__(*args, **kwargs)
+    # def go_to_login_page(self):
+    #     login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
+    #     login_link.click()
+    #     alert = self.browser.switch_to.alert
+    #     alert.accept()
         
-    def should_be_login_link(self):
-        # распаковываем кортеж
-        assert self.browser.find_element(*MainPageLocators.LOGIN_LINK), "Login link is not present"
+    # def should_be_login_link(self):
+    #     # распаковываем кортеж
+    #     assert self.browser.find_element(*MainPageLocators.LOGIN_LINK), "Login link is not present"
